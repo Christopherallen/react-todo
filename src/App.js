@@ -9,6 +9,7 @@ function App() {
   const [ toDoList, setToDoList] = useState(data);
 
   const handleToggle = (id) => {
+    console.log('foo');
     let mapped = toDoList.map(task => {
       return task.id === parseInt(id) ? { ...task, complete: !task.complete } : { ...task};
     });

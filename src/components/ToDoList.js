@@ -4,19 +4,24 @@ import ToDo from "./ToDo";
 const ToDoList = ({toDoList, handleToggle, handleFilter}) => {
   return(
     <div>
-    {
-      toDoList.map( todo => {
-        return(
-          <ToDo
-            todo={todo}
-            handleToggle={handleToggle}
-            handleFilter={handleFilter}
-            key={todo.id}
-          />
-        )
-      })
-    }
-    <button onClick={handleFilter}>Clear Completed</button>
+      <ul
+        className=""
+        aria-labelledby="list-heading"
+      >
+        {
+          toDoList.map( todo => {
+            return(
+                <ToDo
+                  todo={todo}
+                  handleToggle={handleToggle}
+                  handleFilter={handleFilter}
+                  key={todo.id}
+                />
+            )
+          })
+        }
+      </ul>
+      <button onClick={handleFilter}>Clear Completed</button>
     </div>
   )
 }
